@@ -152,6 +152,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
     text-transform: uppercase;
     display: inline-block;
+    margin: 24px 0;
 }
 @media only screen and (min-width: 1158px) {
    .logo{
@@ -237,20 +238,28 @@ padding: 0 15px;
     display: flex;
     flex-direction: column;
     gap: 72px;
+    justify-content: center;
+    align-items: center;
 }
 @media only screen and (min-width: 768px) {
     .footer-container {
         max-width: 736px;
+        
         flex-direction: row;
         flex-wrap: wrap;
         gap: 72px 24px;
+        justify-content: flex-start;
+        padding: 108px 0;
     }
 }
 @media only screen and (min-width: 1158px) {
     .footer-container {
-        max-width: 1150px;
-        display: flex;
+        padding: 0;
         gap: 0;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        
     }
 }
 
@@ -279,11 +288,13 @@ padding: 0 15px;
     font-size: 16px;
     line-height: 24px;
     color: #F4F4FD;
+    width: 264px;
 }
 .footer-cocial{
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 208px;
 }
 @media only screen and (min-width: 768px) {
    .footer-cocial{
@@ -293,6 +304,7 @@ padding: 0 15px;
 @media only screen and (min-width: 1158px) {
    .footer-cocial{
     margin-right: 80px;
+    
   }
 }
 
@@ -443,7 +455,7 @@ padding: 0 15px;
     transition-duration: 250ms;
 }
 
-.footer-subscribe-button:hover,
+.footer-subscribe-button:hover,.modal
 .footer-subscribe-button:focus{
     background-color: #404BBF;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -512,7 +524,7 @@ padding: 0 15px;
     color: var(--color-white);
 }
 .modal{
-    max-width: 408px;
+    max-width: 392px;
     width: 100%;
     min-height: 584px;
     padding-top: 72px;
@@ -527,11 +539,21 @@ padding: 0 15px;
     opacity: 1;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media only screen and (min-width: 768px) {
+   .modal{
+    max-width: 408px;
+  }
+}
 .modal-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 18px;
+}
+@media only screen and (min-width: 1158px) {
+   .modal-wrapper{
     gap: 16px;
+  }
 }
 .modal-form{
     display: flex;
@@ -687,7 +709,16 @@ transition-duration: 250ms;
 }
 
 
-
+.mobile-menu-button{
+    color: var(--color-dark);
+    padding: 0;
+    border: none;
+    outline: transparent;
+    background-color: transparent;
+}
+.brgr-menu{
+     stroke: currentColor;
+}
 
 
 
@@ -718,7 +749,7 @@ transition-duration: 250ms;
     background-color: #2E2F42;
     text-align: center;
     color: white;
-    max-width: 428px;
+
     padding: 112px 0;
     margin: 0 auto;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
@@ -728,7 +759,6 @@ transition-duration: 250ms;
 }
 @media only screen and (min-width: 768px) {
    .hero{
-    max-width: 768px;
     padding: 110px 0;
   }
 }
@@ -738,6 +768,15 @@ transition-duration: 250ms;
     padding: 188px 0;
   }
 }
+.hero-container{
+    max-width: 428px;
+}
+@media only screen and (min-width: 768px) {
+    .hero-container {
+        max-width: 768px;
+    }
+}
+
 
 .main-header{
     font-weight: 700;
@@ -795,6 +834,14 @@ transition-duration: 250ms;
 
 }
 
+.mobile-menu-button{
+    display: flex;
+}
+@media only screen and (min-width: 768px) {
+.mobile-menu-button{
+    display: none;
+  }
+}
 
 /* about  */
 
@@ -967,12 +1014,10 @@ transition-duration: 250ms;
    background-color:#F4F4FD;
 padding: 96px 0;
 }
-@media only screen and (min-width: 768px) {
-        {}
-}
+
 
 @media only screen and (min-width: 1158px) {
-        {padding: 120px 0;}
+        .team{padding: 120px 0;}
 }
 .teammembers{
     display: flex;
@@ -999,13 +1044,7 @@ padding: 96px 0;
     margin-bottom: 72px;
 
 }
-@media only screen and (min-width: 768px) {
-        {}
-}
 
-@media only screen and (min-width: 1158px) {
-        {}
-}
 .teammember{
     background-color: #ffffff;
     display: inline-block;
