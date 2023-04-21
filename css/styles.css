@@ -31,7 +31,7 @@ body {
 
 .link {
   letter-spacing: 0.03em;
-  color: #4d5ae5;
+  color: var(--color-body-text);
   text-decoration: none;
   padding: 0;
   margin: 0;
@@ -228,22 +228,15 @@ textarea::placeholder {
 
 .footer-container {
   margin: 0 auto;
-  max-width: 288px;
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
-  justify-content: center;
-  align-items: center;
 }
 @media only screen and (min-width: 768px) {
   .footer-container {
-    max-width: 736px;
-
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 72px 24px;
     justify-content: flex-start;
-    padding: 108px 0;
+    align-items: center;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -258,17 +251,20 @@ textarea::placeholder {
 
 .footer-content {
   max-width: 264px;
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
-  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 72px;
+  text-align: center;
 }
 @media only screen and (min-width: 768px) {
   .footer-content {
+    text-align: left;
+    margin: 0;
+    display: flex;
     max-width: 264px;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px 72px;
+    align-items: center;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -288,6 +284,8 @@ textarea::placeholder {
   flex-direction: column;
   align-items: center;
   max-width: 208px;
+  margin: 0 auto;
+  margin-bottom: 72px;
 }
 @media only screen and (min-width: 768px) {
   .footer-cocial {
@@ -311,6 +309,7 @@ textarea::placeholder {
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
+  margin-bottom: 16px;
 }
 .logo-studio-footer {
   color: #f4f4fd;
@@ -356,25 +355,33 @@ textarea::placeholder {
 .sotial-box-footer:focus {
   background-color: #31d0aa;
 }
-
 .footer-form {
-  display: flex;
-  gap: 24px;
-  flex-direction: column;
-  align-items: center;
+  max-width: 398px;
 }
 @media only screen and (min-width: 768px) {
   .footer-form {
-    flex-direction: row;
+    max-width: 453px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .footer-form {
+    max-width: 453px;
+    display: flex;
+    gap: 24px;
     align-items: flex-end;
   }
 }
 .footer-label {
+  display: block;
   margin-bottom: 0;
-  align-items: center;
+  text-align: center;
 }
 @media only screen and (min-width: 768px) {
   .footer-label {
+    display: flex;
     align-items: flex-start;
   }
 }
@@ -384,7 +391,8 @@ textarea::placeholder {
   border-radius: 4px;
   background-color: transparent;
   color: var(--color-white);
-  min-width: 398px;
+  max-width: 398px;
+  width: 100%;
   height: 40px;
   padding-left: 16px;
   font-style: normal;
@@ -392,17 +400,16 @@ textarea::placeholder {
   font-size: 12px;
   line-height: 24px;
   letter-spacing: 0.04em;
+  margin-bottom: 16px;
 }
+
 @media only screen and (min-width: 768px) {
   .footer-input {
-    min-width: 264px;
-    height: 40px;
+    width: 264px;
+    margin-bottom: 0;
   }
 }
-@media only screen and (min-width: 1158px) {
-  .footer-input {
-  }
-}
+
 .footer-input:hover,
 .footer-input:focus {
   border: 1px solid #4d5ae5;
@@ -414,8 +421,10 @@ textarea::placeholder {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.02em;
-  margin-bottom: 16px;
   color: var(--color-white);
+  text-align: center;
+  margin-bottom: 16px;
+  display: block;
 }
 
 .footer-subscribe-button {
@@ -434,6 +443,7 @@ textarea::placeholder {
   color: var(--color-white);
   border: none;
   transition-duration: 250ms;
+  margin: 0 auto;
 }
 
 .footer-subscribe-button:hover,
@@ -509,6 +519,8 @@ textarea::placeholder {
   min-height: 584px;
   padding-top: 72px;
   padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -523,6 +535,8 @@ textarea::placeholder {
 @media only screen and (min-width: 768px) {
   .modal {
     max-width: 408px;
+    padding-right: 24px;
+    padding-left: 24px;
   }
 }
 .modal-wrapper {
@@ -702,12 +716,21 @@ label {
   display: flex;
   gap: 56px;
   justify-content: center;
+  max-width: 328px;
+  align-items: center;
 }
 
 .menu-modal {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition-property: opacity visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-modal.is-open {
@@ -718,9 +741,20 @@ label {
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition-property: opacity visibility;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: visible;
+  pointer-events: all;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 35px;
+}
+.mob-menu-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  border: none;
+  outline: transparent;
+  background-color: transparent;
 }
 
 /* index */
@@ -736,19 +770,68 @@ label {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero-bg.jpg);
+    url(../images/hero-bg-phone.jpg);
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
+@media only screen and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg-phone-2x.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
 @media only screen and (min-width: 768px) {
   .hero {
     padding: 110px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg-tablet.jpg);
+  }
+}
+@media only screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg-tablet-2x.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 @media only screen and (min-width: 1158px) {
   .hero {
-    max-width: 1440px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg.jpg);
+    padding: 188px 0;
+  }
+}
+@media only screen and (min-width: 1158px) and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg-2x.jpg);
     padding: 188px 0;
   }
 }
@@ -758,6 +841,11 @@ label {
 @media only screen and (min-width: 768px) {
   .hero-container {
     max-width: 768px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .hero-container {
+    max-width: 1440px;
   }
 }
 
@@ -824,7 +912,38 @@ label {
     display: none;
   }
 }
-
+.nav-mob-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+}
+.nav-mob-link.current {
+  color: var(--color-pressed);
+}
+.nav-mob-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+.nav-mob {
+  margin-bottom: 284px;
+}
+.tel-mob {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: var(--color-pressed);
+}
+.tel-mob-li {
+  margin-bottom: 40px;
+}
+.mail-mob {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-body-text);
+}
+.contacts-mob {
+  margin-bottom: 48px;
+}
 /* about  */
 
 .about {
@@ -844,8 +963,6 @@ label {
   }
 }
 
-.benefits {
-}
 @media only screen and (min-width: 768px) {
   .benefits {
     display: flex;
@@ -862,7 +979,6 @@ label {
 
 .benefit {
   max-width: 396px;
-  text-align: center;
 }
 .benefit:not(:last-child) {
   margin-bottom: 72px;
@@ -870,7 +986,7 @@ label {
 @media only screen and (min-width: 768px) {
   .benefit {
     max-width: 356px;
-    text-align: left;
+    text-align-last: left;
   }
   .benefit:not(:last-child) {
     margin-bottom: 0;
@@ -909,6 +1025,7 @@ label {
   line-height: 1.1;
   color: #2e2f42;
   margin-bottom: 8px;
+  text-align: center;
 }
 @media only screen and (min-width: 768px) {
   .benefit-header {
@@ -1111,11 +1228,10 @@ label {
   display: flex;
   gap: 72px 16px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 @media only screen and (min-width: 768px) {
   .customers-list {
-    gap: 72px 24px;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -1123,10 +1239,23 @@ label {
     gap: 24px;
   }
 }
+.customer {
+  width: calc((100% - 1 * 16px) / 2);
+}
+@media only screen and (min-width: 768px) {
+  .customer {
+    width: calc((100% - 2 * 24px) / 3);
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .customer {
+    width: calc((100% - 5 * 24px) / 6);
+  }
+}
 .customer-box {
-  padding: 15px 34px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
+  height: 88px;
   color: #afb1b8;
   display: flex;
   align-items: center;
@@ -1137,7 +1266,7 @@ label {
 }
 @media only screen and (min-width: 768px) {
   .customer-box {
-    padding: 15px 31px;
+    max-width: 168px;
   }
 }
 
