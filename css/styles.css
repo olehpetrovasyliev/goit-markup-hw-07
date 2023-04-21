@@ -337,12 +337,17 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 @media only screen and (min-width: 768px) {
    .footer-form{
     flex-direction: row;
+    align-items: flex-end;
   }
 }
 .footer-label{
     margin-bottom: 0;
+    align-items: center;
+}
+@media only screen and (min-width: 768px) {
+   .footer-label{
     align-items: flex-start;
-    
+  }
 }
 .footer-input{
     border: 1px solid #FFFFFF;
@@ -361,7 +366,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media only screen and (min-width: 768px) {
     .footer-input {
-        padding-bottom: 120px;
         min-width: 264px;
         height: 40px;
     }
@@ -404,6 +408,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         border: none;
     transition-duration: 250ms;
 }
+
 .footer-subscribe-button:hover,
 .footer-subscribe-button:focus{
     background-color: #404BBF;
