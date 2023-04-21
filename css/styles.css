@@ -711,8 +711,6 @@ label {
 }
 
 .menu-modal.is-open {
-  visibility: visible;
-  pointer-events: all;
   position: fixed;
   background-color: #fff;
   top: 0;
@@ -720,20 +718,9 @@ label {
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition-property: visibility;
+  transition-property: opacity visibility;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  padding-top: 80px;
-  padding-left: 40px;
-  padding-right: 35px;
-}
-.mob-menu-close {
-  border: none;
-  outline: transparent;
-  background-color: transparent;
-  position: absolute;
-  right: 48px;
-  top: 48px;
 }
 
 /* index */
