@@ -149,6 +149,11 @@ body {
   display: inline-block;
   margin: 24px 0;
 }
+@media only screen and (min-width: 768px) {
+  .logo {
+    margin-right: 120px;
+  }
+}
 @media only screen and (min-width: 1158px) {
   .logo {
     margin-right: 76px;
@@ -199,7 +204,7 @@ textarea::placeholder {
 .menu-items {
   display: none;
 }
-@media only screen and (min-width: 1158px) {
+@media only screen and (min-width: 768px) {
   .menu-items {
     display: flex;
     gap: 40px;
@@ -290,6 +295,7 @@ textarea::placeholder {
 @media only screen and (min-width: 768px) {
   .footer-cocial {
     align-items: flex-start;
+    margin: 0;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -1232,19 +1238,18 @@ label {
 }
 @media only screen and (min-width: 768px) {
   .customers-list {
-  }
-}
-@media only screen and (min-width: 1158px) {
-  .customers-list {
     gap: 24px;
   }
 }
+
 .customer {
   width: calc((100% - 1 * 16px) / 2);
 }
+
 @media only screen and (min-width: 768px) {
   .customer {
     width: calc((100% - 2 * 24px) / 3);
+    margin: 0;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -1263,11 +1268,6 @@ label {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media only screen and (min-width: 768px) {
-  .customer-box {
-    max-width: 168px;
-  }
 }
 
 .customer-box:hover,
