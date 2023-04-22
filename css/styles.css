@@ -241,7 +241,7 @@ textarea::placeholder {
     flex-wrap: wrap;
     gap: 72px 24px;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -268,7 +268,7 @@ textarea::placeholder {
     max-width: 264px;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 24px 72px;
+
     align-items: center;
   }
 }
